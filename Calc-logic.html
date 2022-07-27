@@ -1,6 +1,6 @@
 
 <script>
-  var pages, project_scope;
+  var pages, amount_pages, project_scope;
 
 
 var we_tabs_next_button = '[bloc=next-question]';
@@ -64,8 +64,8 @@ var we_tabs_next_button = '[bloc=next-question]';
       $(tab).addClass("w--tab-active");
       $(tab_link).siblings("a").removeClass("w--current");
       $(tab_link).addClass("w--current");
-    }$("[name=pages]").on("input", function () {
-    pages = getValueFromInput("pages");
+    }$("[name=amount_pages]").on("input", function () {
+    amount_pages = getValueFromInput("amount_pages");
 
       nextTab = 'project_scope';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
@@ -86,9 +86,9 @@ var we_tabs_next_button = '[bloc=next-question]';
 
       });
 
-    $("[name=pages]").parent("label.w-radio").on("click", function () {
+    $("[name=amount_pages]").parent("label.w-radio").on("click", function () {
       clickedRadioButtonValue = $("input", this).val();
-      pages = getValueFromInput("pages");
+      amount_pages = getValueFromInput("amount_pages");
 
       nextTab = 'project_scope';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
