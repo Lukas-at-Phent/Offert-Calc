@@ -64,7 +64,7 @@ var we_tabs_next_button = '[bloc=next-question]';
       $(tab).addClass("w--tab-active");
       $(tab_link).siblings("a").removeClass("w--current");
       $(tab_link).addClass("w--current");
-    }if($('.w--tab-active').attr('data-w-tab')=='pages') {
+    }function amount_pages_form_change() {
 
       nextTab = 'project_scope';
       we_activeTab = $(".w--tab-active").attr("data-w-tab");
@@ -85,4 +85,16 @@ var we_tabs_next_button = '[bloc=next-question]';
 
 
     }
+
+  $("[data-name=amount-pages] input").on("input", function () {
+    amount_pages_form_change();
+  });
+
+  var clickedRadioButtonValue = $("input", this).val();
+
+$("[data-name=amount-pages] label.w-radio").on("click", function () {
+  clickedRadioButtonValue = $("input", this).val();
+  amount_pages_form_change();
+});
+
 </script>
